@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+  --primary-color: white;
+  --secondary-color: #3c5aa6;
+  --background-color: #f0f0f0;
+  --card-background: #ffffff;
+  --text-color: #333333;
+}
+
+body {
+  font-family: 'Press Start 2P', cursive;
+  background-color: var(--background-color);
+  margin: 0;
+  padding: 0;
+  color: var(--text-color);
+  background-image: url('../images/Background-Pokemon.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.App {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: var(--primary-color);
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--background-color);
+  padding: 20px;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-image: url('../images/Header-Pokemon.jpg');
+  background-size: contain;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  margin-top: 200px;
+  padding: 20px;
+}
+
+.pokemon-list {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  padding-top: 0;
+}
+
+.pokemon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 40px;
+}
+
+.pokemon-card {
+  background-color: var(--card-background);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  overflow: hidden;
+  height: 250px;
+}
+
+.pokemon-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.pokemon-card img {
+  width: 120px;
+  height: 120px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.pokemon-card:hover img {
+  transform: scale(1.1);
+  filter: brightness(1.04);
+}
+
+.pokemon-card h2 {
+  margin: 15px 0;
+  color: var(--secondary-color);
+  font-size: 1em;
+  text-transform: capitalize;
+}
+
+.pokemon-card p {
+  font-size: 0.8em;
+  color: var(--text-color);
+  margin-bottom: 10px;
+}
+
+.pokemon-type {
+  color: white;
+  padding: 5px 5px;
+  margin: 2px;
+  font-size: 0.9em;
+  text-transform: capitalize;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  text-shadow: 1px 1px 0 #333333;
+}
+
+.pokemon-type:hover {
+  transform: scale(1.1);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.search-input, .type-select {
+  font-family: 'Press Start 2P', cursive;
+  padding: 10px;
+  font-size: 14px;
+  border: 2px solid var(--secondary-color);
+  border-radius: 5px;
+  background-color: var(--card-background);
+  color: var(--text-color);
+}
+
+.search-input {
+  width: 250px;
+}
+
+.type-select {
+  width: 150px;
+}
+
+.search-input:focus, .type-select:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--primary-color);
+}
+
+.loading {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
