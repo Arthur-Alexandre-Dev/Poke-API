@@ -11,4 +11,3 @@ export const getPokemonList = (limit = 20, offset = 0) => {
 export const getPokemonDetails = (url) => {
   return axios.get(url);
 };
-

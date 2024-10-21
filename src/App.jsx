@@ -2,7 +2,7 @@ import React from 'react'
 import PokemonList from './components/PokemonList'
 import './styles/global.css'
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <PokemonList />

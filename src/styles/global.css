@@ -14,7 +14,7 @@ body {
   margin: 0;
   padding: 0;
   color: var(--text-color);
-  background-image: url('../images/Background-Pokemon.jpg');
+  background-image: url('../images/Background-Pokemon.gif');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -29,9 +29,15 @@ body {
 h1 {
   text-align: center;
   color: var(--primary-color);
-  font-size: 2.5em;
+  font-size: 3em;
   margin-bottom: 30px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+h1:hover {
+  transform: scale(1.1);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6);
 }
 
 .header-fixed {
@@ -55,9 +61,6 @@ h1 {
 }
 
 .pokemon-list {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
   padding-top: 0;
 }
 
@@ -71,17 +74,20 @@ h1 {
 .pokemon-card {
   background-color: var(--card-background);
   border-radius: 15px;
-  padding: 20px;
+  padding: 2px;
   text-align: center;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
   overflow: hidden;
   height: 250px;
+  border: 2px solid transparent;
+  cursor: pointer;
 }
 
 .pokemon-card:hover {
   transform: scale(1.05);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  border: 2.9px solid #3c5aa6;
 }
 
 .pokemon-card img {
@@ -110,7 +116,7 @@ h1 {
 
 .pokemon-type {
   color: white;
-  padding: 5px 5px;
+  padding: 5px;
   margin: 2px;
   font-size: 0.9em;
   text-transform: capitalize;
@@ -137,12 +143,18 @@ h1 {
   font-size: 14px;
   border: 2px solid var(--secondary-color);
   border-radius: 5px;
-  background-color: var(--card-background);
+  background-color: rgba(255, 255, 255, 0.9);
   color: var(--text-color);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .search-input {
   width: 250px;
+  background-image: url('../images/pokeball.png');
+  background-repeat: no-repeat;
+  background-position: left 10px center;
+  background-size: 20px;
+  padding-left: 40px;
 }
 
 .type-select {
@@ -151,24 +163,37 @@ h1 {
 
 .search-input:focus, .type-select:focus {
   outline: none;
-  box-shadow: 0 0 0 2px var(--primary-color);
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px var(--primary-color);
+}
+
+.search-input::placeholder {
+  color: var(--text-color);
+  opacity: 0.7;
 }
 
 .loading {
-  animation: pulse 1.5s infinite;
+  font-size: 1.2em;
+  color: white;
+  text-align: center;
+  margin-top: 20px;
 }
 
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.05);
-    opacity: 0.7;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
+.no-pokemon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 2em;
+  color: white;
+  margin: 20px 0;
+  width: 100%;
+}
+
+.pokemon-stats {
+  margin-top: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }

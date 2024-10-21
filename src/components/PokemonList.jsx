@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { getPokemonList, getPokemonDetails } from '../services/api';
 import PokemonCard from './PokemonCard';
@@ -9,6 +9,7 @@ const PokemonList = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedType, setSelectedType] = useState('');
   const [allTypes, setAllTypes] = useState([]);
+  const [loadingDots, setLoadingDots] = useState('');
 
   const fetchPokemon = async () => {
     const response = await getPokemonList(20, pokemon.length);
@@ -34,13 +35,18 @@ const PokemonList = () => {
     fetchPokemon();
   }, []);
 
-  const handleSearch = (e) => {
-    setSearchTerm(e.target.value);
-  };
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setLoadingDots(prev => (prev.length < 3 ? prev + '.' : ''));
+    }, 500);
+    return () => clearInterval(interval);
+  }, []);
 
-  const handleTypeChange = (e) => {
-    setSelectedType(e.target.value);
-  };
+  const handleSearch = useCallback((e) => {
+    setSearchTerm(e.target.value);
+  }, []);
+
+  const handleTypeChange = (e) => setSelectedType(e.target.value);
 
   const filteredPokemon = useMemo(() => {
     return pokemon.filter((poke) => {
@@ -65,7 +71,9 @@ const PokemonList = () => {
           <select value={selectedType} onChange={handleTypeChange} className="type-select">
             <option value="">Todos</option>
             {allTypes.map(type => (
-              <option key={type} value={type}>{type}</option>
+              <option key={type} value={type}>
+                {type.charAt(0).toUpperCase() + type.slice(1)}
+              </option>
             ))}
           </select>
         </div>
@@ -75,14 +83,19 @@ const PokemonList = () => {
           dataLength={filteredPokemon.length}
           next={fetchPokemon}
           hasMore={!!nextUrl}
-          loader={<div className="loading">Carregando mais Pokémon...</div>}
+          loader={filteredPokemon.length === 0 ? null : <div className="loading">Buscando Pokémons{loadingDots}</div>}
         >
           <div className="pokemon-grid">
-            {filteredPokemon.map((poke) => (
-              <PokemonCard key={poke.id} pokemon={poke} />
-            ))}
+            {filteredPokemon.length > 0 ? (
+              filteredPokemon.map((poke) => (
+                <PokemonCard key={poke.id} pokemon={poke} />
+              ))
+            ) : null}
           </div>
         </InfiniteScroll>
+        {filteredPokemon.length === 0 && (
+          <div className="no-pokemon">Pokémon não existe.</div>
+        )}
       </div>
     </div>
   );
