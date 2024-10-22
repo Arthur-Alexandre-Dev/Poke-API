@@ -4,7 +4,7 @@ Pokedex é uma aplicação web desenvolvida em React utilizando Vite como bundle
 
 ## Layout
 
-https://github.com/user-attachments/assets/269d27b2-740b-4626-b624-a749d47114ea
+https://github.com/user-attachments/assets/3cc7b5eb-3dc2-47bc-9680-81824ba7cbe0
 
 ## Funcionalidades
 
