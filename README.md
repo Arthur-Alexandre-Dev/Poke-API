@@ -47,18 +47,20 @@ Para rodar o projeto localmente, siga os passos abaixo:
 5. **Acesse a aplicação**: Abra seu navegador e vá para `http://localhost:3000`.
 
 ## Estrutura do Projeto
-poke-list/
-├── public/ # Arquivos públicos
-├── src/ # Código fonte da aplicação
-│ ├── components/ # Componentes React
-│ ├── services/ # Serviços para chamadas à API
-│ ├── styles/ # Estilos CSS
-│ ├── App.jsx # Componente principal da aplicação
-│ ├── main.jsx # Ponto de entrada da aplicação
-├── .gitignore # Arquivos a serem ignorados pelo Git
-├── package.json # Dependências e scripts do projeto
-├── vite.config.js # Configurações do Vite
-└── README.md # Documentação do projeto
+├── public/               # Arquivos estáticos
+├── src/                  # Código fonte da aplicação
+│   ├── assets/           # Recursos estáticos (imagens, ícones, etc.)
+│   ├── components/       # Componentes reutilizáveis da interface
+│   ├── hooks/            # Hooks personalizados
+│   ├── pages/            # Páginas da aplicação
+│   ├── services/         # Serviços (ex.: chamadas à API)
+│   ├── App.jsx           # Componente principal
+│   └── main.jsx          # Ponto de entrada da aplicação
+├── .gitignore            # Arquivos e pastas ignorados pelo Git
+├── package.json          # Dependências e scripts do projeto
+├── vite.config.js        # Configuração do Vite
+└── README.md             # Documentação do projeto
+
 
 ## Contribuição
 
