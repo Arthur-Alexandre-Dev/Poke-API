@@ -76,7 +76,7 @@ Contribuições são bem-vindas! Se você deseja contribuir, siga estas etapas:
 
 ## Licença
 
-Este projeto está licenciado sob a MIT License. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+Este projeto está licenciado sob a MIT License. Veja o arquivo [LICENSE](https://github.com/Arthur-Alexandre-Dev/Pokedex/blob/main/LICENSE) para mais detalhes.
 
 ## Contato
 
