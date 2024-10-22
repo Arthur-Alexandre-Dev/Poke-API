@@ -34,7 +34,7 @@ Este projeto está licenciado sob a MIT License. Veja o arquivo LICENSE para mai
 Contato
 Para dúvidas ou sugestões, entre em contato:
 Nome: Arthur Alexandre
-Email: seu-email@example.com
+Email: arthuralexandres.ti@gmail.com
 GitHub: Arthur-Alexandre-Dev
 ---
 Sinta-se à vontade para personalizar o README conforme necessário, adicionando mais informações ou detalhes específicos sobre o seu projeto!
