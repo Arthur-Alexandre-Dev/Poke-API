@@ -1,6 +1,6 @@
-# Poke-List
+# Pokedex
 
-Poke-List é uma aplicação web desenvolvida em React utilizando Vite como bundler. O projeto permite que os usuários pesquisem e visualizem informações sobre Pokémon, utilizando a API pública do Pokémon.
+Pokedex é uma aplicação web desenvolvida em React utilizando Vite como bundler. O projeto permite que os usuários pesquisem e visualizem informações sobre Pokémon, utilizando a API pública do Pokémon.
 
 ## Funcionalidades
 
