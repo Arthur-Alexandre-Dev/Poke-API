@@ -2,6 +2,11 @@
 
 Pokedex é uma aplicação web desenvolvida em React utilizando Vite como bundler. O projeto permite que os usuários pesquisem e visualizem informações sobre Pokémon, utilizando a API pública do Pokémon.
 
+## Layout
+
+![Layout](https://github.com/user-attachments/assets/89fdb0e3-14b9-4018-abfd-df03962edc16)
+
+
 ## Funcionalidades
 
 - **Pesquisa de Pokémon**: Os usuários podem pesquisar Pokémon pelo nome.
