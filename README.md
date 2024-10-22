@@ -47,6 +47,7 @@ Para rodar o projeto localmente, siga os passos abaixo:
 5. **Acesse a aplicação**: Abra seu navegador e vá para `http://localhost:3000`.
 
 ## Estrutura do Projeto
+```bash
 ├── public/               # Arquivos estáticos
 ├── src/                  # Código fonte da aplicação
 │   ├── assets/           # Recursos estáticos (imagens, ícones, etc.)
@@ -60,6 +61,7 @@ Para rodar o projeto localmente, siga os passos abaixo:
 ├── package.json          # Dependências e scripts do projeto
 ├── vite.config.js        # Configuração do Vite
 └── README.md             # Documentação do projeto
+```
 
 
 ## Contribuição
